@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+            font-family: 'Courier';
+			background-color:rgb(210, 152, 216);
+        }
+        #valentineQuestion {
+            font-size: 50px;
+            margin-bottom: 40px;
+        }
+        .answerButton {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px;
+            font-family: 'courier';
+        }
+    </style>
+</head>
+<body>
+    <div id="valentineQuestion">Are you be my valentine?</div>
+    <button class="answerButton" onclick="location.href='thankyou.html'">Yes</button>
+    <button class="answerButton" id="noButton">No</button>
+
+    <script>
+        document.getElementById('noButton').addEventListener('click', function() {
+            if (this.textContent === 'No') {
+                this.textContent = 'Yes'; // First click changes the text to Yes
+            } else {
+                window.location.href = 'thankyou.html'; // Second click redirects to the congratulations page
+            }
+        });
+    </script>
+</body>
+</html>

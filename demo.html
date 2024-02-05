@@ -7,13 +7,13 @@
     <style>
         body {
             text-align: center;
-            margin-top: 50px;
+            margin-top: 30px;
             font-family: 'Courier';
 			background-color:rgb(210, 152, 216);
         }
         #valentineQuestion {
             font-size: 50px;
-            margin-bottom: 40px;
+            margin-bottom: 10px;
         }
         .answerButton {
             padding: 10px 20px;
@@ -21,14 +21,16 @@
             cursor: pointer;
             margin: 10px;
             font-family: 'courier';
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <div id="valentineQuestion">Are you be my valentine?</div>
+    <div id="valentineQuestion"><b>Will you be my valentine?</b></div>
     <button class="answerButton" onclick="location.href='thankyou.html'">Yes</button>
     <button class="answerButton" id="noButton">No</button>
-
+    <br>
+    <img src ='cat.png' alt = 'cat asking question' width = '482' height = '522'>
     <script>
         document.getElementById('noButton').addEventListener('click', function() {
             if (this.textContent === 'No') {

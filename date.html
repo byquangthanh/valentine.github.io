@@ -13,14 +13,24 @@
 	}
 	h1 {
 		font-size: 40px;
-
+	}
+	form {
+		display: inline-block;
+	}
+	.form-group {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 	</style>
 </head>
 <body>
 	<h1 title="choose a date">Are you free on ...</h1>
 	<p>(select a date)</p>
-	
-</body>
+	<form action="/action_page.php" class="form-group">
+		<label for="birthday">Valentine:</label>
+		<input type="date" id="birthday" name="birthday">
+		<button type="submit" formaction="outfits.html">Submit</button>
+	</form>
 </body>
 </html>

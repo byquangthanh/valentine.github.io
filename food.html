@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Selection</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 30px;
+            font-family: 'Courier';
+            background-color:#FFF5E4;
+            color: #FF9494;
+        }
+        #foodquestion {
+            font-size: 50px;
+            margin-bottom: 30px;
+        }
+        .food-item {
+            display: inline-block;
+            margin: 10px;
+            vertical-align: top;
+        }
+        .food-item img {
+            width: 220px; /* Adjust based on your preference */
+            height: auto;
+        }
+        .food-item label {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="foodquestion"><b>What food would you like to eat?</b></div>
+    
+    <!-- Food selection list -->
+    <div class="food-selection">
+        <div class="food-item">
+            <img src="food/burgers.jpeg" alt="Burgers, fries and fried chicken">
+            <label><input type="checkbox" name="food" value="Burgers, fries and fried chicken"> Burgers and fried chicken</label>
+        </div>
+        <div class="food-item">
+            <img src="food/dog.jpeg" alt="dog">
+            <label><input type="checkbox" name="food" value="Dog"> Dog</label>
+        </div>
+        <!-- Add more food items here following the same pattern -->
+        <div class="food-item">
+            <img src="food/dumplings.jpeg" alt="Dumplings">
+            <label><input type="checkbox" name="food" value="Dumplings"> Dumplings</label>
+        </div>
+        <!-- Continue adding other food items... -->
+    </div>
+    
+    <!-- Continue button -->
+    <button onclick="location.href='dessert.html'">Continue</button>
+    
+</body>
+</html>

@@ -9,7 +9,8 @@
             text-align: center;
             margin-top: 30px;
             font-family: 'Courier';
-			background-color:rgb(210, 152, 216);
+			background-color:#FFF5E4;
+            color: #FF9494;
         }
         #valentineQuestion {
             font-size: 50px;
@@ -22,18 +23,22 @@
             margin: 10px;
             font-family: 'courier';
             margin-bottom: 20px;
+            background-color:#FFE3E1;
+            color: #e67373;
+            border-radius: 12px;
+            border: 2px solid #FFE3E1;
         }
     </style>
 </head>
 <body>
     <div id="valentineQuestion"><b>Will you be my valentine?</b></div>
     <button class="answerButton" onclick="location.href='thankyou.html'">Yes</button>
-    <button class="answerButton" id="noButton">No</button>
+    <button class="answerButton" id="noButton">I no no wanna</button>
     <br>
-    <img src ='cat.png' alt = 'cat asking question' width = '482' height = '522'>
+    <img src ='cat.gif' alt = 'cat asking question' class="responsive">
     <script>
         document.getElementById('noButton').addEventListener('click', function() {
-            if (this.textContent === 'No') {
+            if (this.textContent === 'I no no wanna') {
                 this.textContent = 'Yes'; // First click changes the text to Yes
             } else {
                 window.location.href = 'thankyou.html'; // Second click redirects to the congratulations page

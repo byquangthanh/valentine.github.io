@@ -33,16 +33,15 @@
 <body>
     <div id="valentineQuestion"><b>Will you be my valentine?</b></div>
     <button class="answerButton" onclick="location.href='thankyou.html'">Yes</button>
-    <button class="answerButton" id="noButton">I no no wanna</button>
+    <button class="answerButton" id="noButton">No</button>
     <br>
     <img src ='cat.gif' alt = 'cat asking question' class="responsive">
+
     <script>
         document.getElementById('noButton').addEventListener('click', function() {
-            if (this.textContent === 'I no no wanna') {
-                this.textContent = 'Yes'; // First click changes the text to Yes
-            } else {
-                window.location.href = 'thankyou.html'; // Second click redirects to the congratulations page
-            }
+            var yesButton = document.querySelector('button[onclick*="thankyou.html"]');
+            var currentFontSize = parseInt(window.getComputedStyle(yesButton).fontSize);
+            yesButton.style.fontSize = (currentFontSize + 10) + 'px'; // Increase font size by 5px
         });
     </script>
 </body>

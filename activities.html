@@ -1,36 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activities</title>
-    <link rel="stylesheet" href="css/activities.css" />
-  </head>
-  <body>
-    <div id="activityquestion"><b>What are we doing after?</b></div>
+    <link rel="stylesheet" href="css/activities.css">
+</head>
+<body>
+    <div id="activityquestion"><b>Which activities would you prefer for us to do?</b></div>
     <div class="activities-selection">
       <div class="activity-item">
-        <img src="activities/aquarium.jpeg" alt="aquarium" />
+        <img src="activities/photograph.jpg" alt="take picture" />
         <label
           ><input
             type="checkbox"
             name="activities"
-            value="aquarium"
-          />aquarium</label
+            value="take picture"
+          />take picture</label
         >
       </div>
       <div class="activity-item">
-        <img src="activities/arcade.jpeg" alt="arcade" />
-        <label
-          ><input
-            type="checkbox"
-            name="activities"
-            value="arcade"
-          />arcade</label
-        >
-      </div>
-      <div class="activity-item">
-        <img src="activities/cinema.jpeg" alt="cinema" />
+        <img src="activities/cinema.jpg" alt="cinema" />
         <label
           ><input
             type="checkbox"
@@ -40,7 +30,7 @@
         >
       </div>
       <div class="activity-item">
-        <img src="activities/keramika.jpeg" alt="ceramics" />
+        <img src="activities/ceramic.jpg" alt="ceramics" />
         <label
           ><input
             type="checkbox"
@@ -50,28 +40,55 @@
         >
       </div>
       <div class="activity-item">
-        <img src="activities/kunsthalle.jpeg" alt="kunsthalle" />
+        <img src="activities/museum.jpg" alt="museum" />
         <label
           ><input
             type="checkbox"
             name="activities"
-            value="kunsthalle"
-          />exhibition</label
+            value="museum"
+          />museum</label
         >
       </div>
       <div class="activity-item">
-        <img src="activities/park.jpeg" alt="park.jpeg" />
+        <img src="activities/park.jpg" alt="park" />
         <label
           ><input
             type="checkbox"
             name="activities"
-            value="park.jpeg"
+            value="park"
           />park</label
         >
       </div>
     </div>
-    <button class="button" onclick="location.href='lastpage.html'">
-      Last page
+    <button class="button" onclick="exportActivitiesToFile()">
+      Export Activities
     </button>
-  </body>
+    <button class="button" onclick="location.href='lastpage.html'">
+      Last page (¯ ³¯)♡
+    </button>
+
+    <script>
+        function exportActivitiesToFile() {
+            // Get all checkboxes
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            
+            // Extract the values of checked checkboxes
+            var selectedActivities = Array.from(checkboxes).map(function(checkbox) {
+                return checkbox.value;
+            });
+            
+            // Create the content for the text file
+            var fileContent = "Selected activities:\n" + selectedActivities.join('\n');
+            
+            // Create a Blob containing the text data
+            var blob = new Blob([fileContent], { type: "text/plain" });
+            
+            // Create a link element to trigger the download
+            var link = document.createElement("a");
+            link.download = "activities.txt";
+            link.href = window.URL.createObjectURL(blob);
+            link.click();
+        }
+    </script>
+</body>
 </html>

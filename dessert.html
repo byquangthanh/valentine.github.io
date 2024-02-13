@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dessert</title>
-    <link rel="stylesheet" href="css/dessert.css" />
-  </head>
-  <body>
-    <div id="dessertquestion">Which dessert we eatin cuh</div>
+    <link rel="stylesheet" href="css/dessert.css">
+</head>
+<body>
+    <div id="dessertquestion">Which dessert are you in the mood for?</div>
 
     <div class="dessert-selection">
       <div class="dessert-item">
-        <img src="food/boba.jpeg" alt="boba" />
+        <img src="food/Koithe.jpg" alt="Koi the" />
         <label
-          ><input type="checkbox" name="dessert" value="boba" /> boba</label
+          ><input type="checkbox" name="dessert" value="Koi the" /> Koi the</label
         >
       </div>
       <div class="dessert-item">
-        <img src="food/churro.jpeg" alt="churro" />
+        <img src="food/Sukem.jpg" alt="Su kem" />
         <label
-          ><input type="checkbox" name="dessert" value="churro" /> churro</label
+          ><input type="checkbox" name="dessert" value="Su kem" /> Su kem</label
         >
       </div>
       <div class="dessert-item">
@@ -33,22 +33,62 @@
         >
       </div>
       <div class="dessert-item">
-        <img src="food/randombun.jpeg" alt="randombun" />
+        <img src="food/banhtrangtron.jpg" alt="banh trang tron" />
         <label
-          ><input type="checkbox" name="dessert" value="randombun" /> random
-          bun</label
+          ><input type="checkbox" name="dessert" value="banh trang tron" /> banh trang tron</label
         >
       </div>
       <div class="dessert-item">
-        <img src="food/taiyaki.jpeg" alt="taiyaki" />
+        <img src="food/takoyaki.jpg" alt="takoyaki" />
         <label
-          ><input type="checkbox" name="dessert" value="taiyaki" />
-          taiyaki</label
+          ><input type="checkbox" name="dessert" value="takoyaki" />
+          takoyaki</label
+        >
+      </div>
+      <div class="dessert-item">
+        <img src="food/icecream.jpg" alt="Ice-cream" />
+        <label
+          ><input type="checkbox" name="dessert" value="Ice-cream" />
+          ice-cream</label
+        >
+      </div>
+      <div class="dessert-item">
+        <img src="food/traicay.jpg" alt="Fruits" />
+        <label
+          ><input type="checkbox" name="dessert" value="Fruits" />
+          Fruits</label
         >
       </div>
     </div>
-    <button class="button" onclick="location.href='activities.html'">
-      Continue UWU
+    <button class="button" onclick="exportDessertToFile()">
+      Export Dessert Selection
     </button>
-  </body>
+    <button class="button" onclick="location.href='activities.html'">
+      Continue ( ˘͈ ᵕ ˘͈♡)
+    </button>
+
+    <script>
+        function exportDessertToFile() {
+            // Get all checkboxes for dessert
+            var dessertCheckboxes = document.querySelectorAll('input[name="dessert"]:checked');
+            
+            // Extract the values of checked checkboxes
+            var selectedDesserts = Array.from(dessertCheckboxes).map(function(checkbox) {
+                return checkbox.value;
+            });
+            
+            // Create the content for the text file
+            var fileContent = "Selected desserts:\n" + selectedDesserts.join('\n');
+            
+            // Create a Blob containing the text data
+            var blob = new Blob([fileContent], { type: "text/plain" });
+            
+            // Create a link element to trigger the download
+            var link = document.createElement("a");
+            link.download = "dessert.txt";
+            link.href = window.URL.createObjectURL(blob);
+            link.click();
+        }
+    </script>
+</body>
 </html>

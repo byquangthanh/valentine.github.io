@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dessert</title>
-    <link rel="stylesheet" href="css/dessert.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="css/dessert.css">
+</head>
+<body>
     <div id="dessertquestion">What dessert are you in the mood for?</div>
 
     <div class="dessert-selection">
@@ -60,8 +60,32 @@
         >
       </div>
     </div>
-    <button class="button" onclick="location.href='activities.html'">
-      Continue ( ˘͈ ᵕ ˘͈♡)
+    <button class="button" onclick="exportDessertToFile()">
+      Export Dessert Selection
     </button>
-  </body>
+
+    <script>
+        function exportDessertToFile() {
+            // Get all checkboxes for dessert
+            var dessertCheckboxes = document.querySelectorAll('input[name="dessert"]:checked');
+            
+            // Extract the values of checked checkboxes
+            var selectedDesserts = Array.from(dessertCheckboxes).map(function(checkbox) {
+                return checkbox.value;
+            });
+            
+            // Create the content for the text file
+            var fileContent = "Selected desserts:\n" + selectedDesserts.join('\n');
+            
+            // Create a Blob containing the text data
+            var blob = new Blob([fileContent], { type: "text/plain" });
+            
+            // Create a link element to trigger the download
+            var link = document.createElement("a");
+            link.download = "dessert.txt";
+            link.href = window.URL.createObjectURL(blob);
+            link.click();
+        }
+    </script>
+</body>
 </html>

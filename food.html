@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Selection</title>
-    <link rel="stylesheet" href="css/food.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="css/food.css">
+</head>
+<body>
     <div id="foodquestion">
       <b>What food would you like to eat?</b>
     </div>
@@ -56,8 +56,32 @@
         <label><input type="checkbox" name="food" value="sushi" /> sushi</label>
       </div>
     </div>
-    <button class="button" onclick="location.href='dessert.html'">
-      Continue ٩(◕‿◕)۶
+    <button class="button" onclick="exportFoodToFile()">
+      Export Food Selection
     </button>
-  </body>
+
+    <script>
+        function exportFoodToFile() {
+            // Get all checkboxes for food
+            var foodCheckboxes = document.querySelectorAll('input[name="food"]:checked');
+            
+            // Extract the values of checked checkboxes
+            var selectedFood = Array.from(foodCheckboxes).map(function(checkbox) {
+                return checkbox.value;
+            });
+            
+            // Create the content for the text file
+            var fileContent = "Selected food:\n" + selectedFood.join('\n');
+            
+            // Create a Blob containing the text data
+            var blob = new Blob([fileContent], { type: "text/plain" });
+            
+            // Create a link element to trigger the download
+            var link = document.createElement("a");
+            link.download = "food.txt";
+            link.href = window.URL.createObjectURL(blob);
+            link.click();
+        }
+    </script>
+</body>
 </html>

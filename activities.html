@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activities</title>
-    <link rel="stylesheet" href="css/activities.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="css/activities.css">
+</head>
+<body>
     <div id="activityquestion"><b>Which activities would you prefer for us to do?</b></div>
     <div class="activities-selection">
       <div class="activity-item">
@@ -60,8 +60,32 @@
         >
       </div>
     </div>
-    <button class="button" onclick="location.href='lastpage.html'">
-      Last page (¯ ³¯)♡
+    <button class="button" onclick="exportActivitiesToFile()">
+      Export Activities
     </button>
-  </body>
+
+    <script>
+        function exportActivitiesToFile() {
+            // Get all checkboxes
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            
+            // Extract the values of checked checkboxes
+            var selectedActivities = Array.from(checkboxes).map(function(checkbox) {
+                return checkbox.value;
+            });
+            
+            // Create the content for the text file
+            var fileContent = "Selected activities:\n" + selectedActivities.join('\n');
+            
+            // Create a Blob containing the text data
+            var blob = new Blob([fileContent], { type: "text/plain" });
+            
+            // Create a link element to trigger the download
+            var link = document.createElement("a");
+            link.download = "activities.txt";
+            link.href = window.URL.createObjectURL(blob);
+            link.click();
+        }
+    </script>
+</body>
 </html>

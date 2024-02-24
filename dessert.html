@@ -10,45 +10,47 @@
     <div id="dessertquestion">Which dessert we eatin cuh</div>
 
     <div class="dessert-selection">
-      <div class="dessert-item">
-        <img src="food/boba.jpeg" alt="boba" />
-        <label
-          ><input type="checkbox" name="dessert" value="boba" /> boba</label
-        >
-      </div>
-      <div class="dessert-item">
-        <img src="food/churro.jpeg" alt="churro" />
-        <label
-          ><input type="checkbox" name="dessert" value="churro" /> churro</label
-        >
-      </div>
-      <div class="dessert-item">
-        <img src="food/che.jpeg" alt="che" />
-        <label><input type="checkbox" name="dessert" value="che" /> che</label>
-      </div>
-      <div class="dessert-item">
-        <img src="food/mochi.jpeg" alt="mochi" />
-        <label
-          ><input type="checkbox" name="dessert" value="mochi" /> mochi</label
-        >
-      </div>
-      <div class="dessert-item">
-        <img src="food/randombun.jpeg" alt="randombun" />
-        <label
-          ><input type="checkbox" name="dessert" value="randombun" /> random
-          bun</label
-        >
-      </div>
-      <div class="dessert-item">
-        <img src="food/taiyaki.jpeg" alt="taiyaki" />
-        <label
-          ><input type="checkbox" name="dessert" value="taiyaki" />
-          taiyaki</label
-        >
-      </div>
+      <form action="/actions/action_dessert.php" method="post"> <!-- Added form tag with action and method -->
+        <div class="dessert-item">
+          <img src="food/boba.jpeg" alt="boba" />
+          <label
+            ><input type="checkbox" name="dessert[]" value="boba" /> boba</label
+          > <!-- Modified line: Changed name attribute to dessert[] -->
+        </div>
+        <div class="dessert-item">
+          <img src="food/churro.jpeg" alt="churro" />
+          <label
+            ><input type="checkbox" name="dessert[]" value="churro" /> churro</label
+          > <!-- Modified line: Changed name attribute to dessert[] -->
+        </div>
+        <div class="dessert-item">
+          <img src="food/che.jpeg" alt="che" />
+          <label><input type="checkbox" name="dessert[]" value="che" /> che</label> <!-- Modified line: Changed name attribute to dessert[] -->
+        </div>
+        <div class="dessert-item">
+          <img src="food/mochi.jpeg" alt="mochi" />
+          <label
+            ><input type="checkbox" name="dessert[]" value="mochi" /> mochi</label
+          > <!-- Modified line: Changed name attribute to dessert[] -->
+        </div>
+        <div class="dessert-item">
+          <img src="food/randombun.jpeg" alt="randombun" />
+          <label
+            ><input type="checkbox" name="dessert[]" value="randombun" /> random
+            bun</label
+          > <!-- Modified line: Changed name attribute to dessert[] -->
+        </div>
+        <div class="dessert-item">
+          <img src="food/taiyaki.jpeg" alt="taiyaki" />
+          <label
+            ><input type="checkbox" name="dessert[]" value="taiyaki" />
+            taiyaki</label
+          > <!-- Modified line: Changed name attribute to dessert[] -->
+        </div>
+        <button class="button" type="submit"> <!-- Modified line: Changed button text and type -->
+          Continue UWU
+        </button>
+      </form> <!-- Added form closing tag -->
     </div>
-    <button class="button" onclick="location.href='activities.html'">
-      Continue UWU
-    </button>
   </body>
 </html>

@@ -12,53 +12,55 @@
     </div>
 
     <div class="food-selection">
-      <div class="food-item">
-        <img src="food/burgers.jpeg" alt="Burgers, fries and fried chicken" />
-        <label
-          ><input
-            type="checkbox"
-            name="food"
-            value="Burgers, fries and fried chicken"
-          />
-          burgers and fried chicken</label
-        >
-      </div>
-      <div class="food-item">
-        <img src="food/dog.jpeg" alt="dog" />
-        <label
-          ><input type="checkbox" name="food" value="hotdog" /> hotdog</label
-        >
-      </div>
-      <div class="food-item">
-        <img src="food/koreanfood.jpeg" alt="koreanfood" />
-        <label
-          ><input type="checkbox" name="food" value="Korean food" /> korean
-          food</label
-        >
-      </div>
-      <div class="food-item">
-        <img src="food/pasta.jpeg" alt="pasta" />
-        <label><input type="checkbox" name="food" value="pasta" /> pasta</label>
-      </div>
-      <div class="food-item">
-        <img src="food/pizza.jpeg" alt="pizza" />
-        <label><input type="checkbox" name="food" value="pizza" /> pizza</label>
-      </div>
-      <div class="food-item">
-        <img src="food/salad.jpeg" alt="salad" />
-        <label><input type="checkbox" name="food" value="salad" /> salad</label>
-      </div>
-      <div class="food-item">
-        <img src="food/steak.jpeg" alt="steak" />
-        <label><input type="checkbox" name="food" value="steak" /> steak</label>
-      </div>
-      <div class="food-item">
-        <img src="food/sushi.jpeg" alt="sushi" />
-        <label><input type="checkbox" name="food" value="sushi" /> sushi</label>
-      </div>
+      <form action="actions/action_food.php" method="post"> <!-- Added form tag with action and method -->
+        <div class="food-item">
+          <img src="food/burgers.jpeg" alt="Burgers, fries and fried chicken" />
+          <label
+            ><input
+              type="checkbox"
+              name="food[]"
+              value="Burgers, fries and fried chicken"
+            />
+            burgers and fried chicken</label
+          > <!-- Modified line: Changed name attribute to food[] -->
+        </div>
+        <div class="food-item">
+          <img src="food/dog.jpeg" alt="dog" />
+          <label
+            ><input type="checkbox" name="food[]" value="hotdog" /> hotdog</label
+          > <!-- Modified line: Changed name attribute to food[] -->
+        </div>
+        <div class="food-item">
+          <img src="food/koreanfood.jpeg" alt="koreanfood" />
+          <label
+            ><input type="checkbox" name="food[]" value="Korean food" /> korean
+            food</label
+          > <!-- Modified line: Changed name attribute to food[] -->
+        </div>
+        <div class="food-item">
+          <img src="food/pasta.jpeg" alt="pasta" />
+          <label><input type="checkbox" name="food[]" value="pasta" /> pasta</label> <!-- Modified line: Changed name attribute to food[] -->
+        </div>
+        <div class="food-item">
+          <img src="food/pizza.jpeg" alt="pizza" />
+          <label><input type="checkbox" name="food[]" value="pizza" /> pizza</label> <!-- Modified line: Changed name attribute to food[] -->
+        </div>
+        <div class="food-item">
+          <img src="food/salad.jpeg" alt="salad" />
+          <label><input type="checkbox" name="food[]" value="salad" /> salad</label> <!-- Modified line: Changed name attribute to food[] -->
+        </div>
+        <div class="food-item">
+          <img src="food/steak.jpeg" alt="steak" />
+          <label><input type="checkbox" name="food[]" value="steak" /> steak</label> <!-- Modified line: Changed name attribute to food[] -->
+        </div>
+        <div class="food-item">
+          <img src="food/sushi.jpeg" alt="sushi" />
+          <label><input type="checkbox" name="food[]" value="sushi" /> sushi</label> <!-- Modified line: Changed name attribute to food[] -->
+        </div>
+        <button class="button" type="submit"> <!-- Modified line: Changed button text and type -->
+          Continue UWU
+        </button>
+      </form> <!-- Added form closing tag -->
     </div>
-    <button class="button" onclick="location.href='dessert.html'">
-      Continue UWU
-    </button>
   </body>
 </html>
